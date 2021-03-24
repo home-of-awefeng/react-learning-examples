@@ -1,55 +1,21 @@
-import React, { Component, MouseEvent, PureComponent } from "react";
-
-interface IMousePosition {
-	x: number;
-	y: number;
-}
-
-type ICatProps = { mouse: IMousePosition };
-class Cat extends Component<ICatProps> {
-	render() {
-		const mouse = this.props.mouse;
-		return (
-			<div style={{ position: 'absolute', left: mouse.x, top: mouse.y, width: "4px", height: "4px", borderRadius: "2px", background: "red"}} ></div>
-		);
-	}
-}
-
-type IMouseProps = {
-	render: (position: IMousePosition) => JSX.Element;
-}
-type IMouseState = IMousePosition;
-class Mouse extends PureComponent<IMouseProps, IMouseState> {
-	constructor(props: IMouseProps) {
-		super(props);
-		this.handleMouseMove = this.handleMouseMove.bind(this);
-		this.state = { x: 0, y: 0 };
-	}
-
-	handleMouseMove(event: MouseEvent) {
-		this.setState({
-			x: event.clientX,
-			y: event.clientY
-		});
-	}
-
-	render() {
-		return (
-			<div style={{ height: '100vh' }} onMouseMove={this.handleMouseMove}>
-				{this.props.render(this.state)}
-			</div>
-		);
-	}
-}
+import React from "react";
+import Cat from "./components/Cat";
+import Mouse from "./components/Mouse";
+import { IMousePosition } from "./types";
 
 export default function RenderPropsPage () {
+	// always point to the same function when Mouse component extends PureComponent
+	// as `method two` lead to PureComponent not work.
 	const renderTheCat = (mouse: IMousePosition) => {
 		return <Cat mouse={mouse} />;
 	}
 	return (
 		<div>
 			<h1>Move the mouse around!</h1>
+			{/* method one */}
 			<Mouse render={renderTheCat} />
+
+			{/* method two: `render` prop value is not same with previous value every component rerender  */}
 			{/*<Mouse render={(mouse: IMousePosition) => <Cat mouse={mouse} />} />*/}
 		</div>
 		)
