@@ -2,9 +2,11 @@ import React from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 import logo from '../assets/logo.svg';
 import './App.css';
-import { Routes } from "./Routes";
+import { IRoute, routes, Routes } from "./Routes";
 
 function App() {
+	const links = routes.filter(({ title }: IRoute) => !!title);
+
   return (
 		<Router>
 			<div className="app-header">
@@ -12,7 +14,11 @@ function App() {
 					<img src={logo} className="app-logo" alt="logo" />
 				</a>
 				<ul className="app-link">
-					<li><a href="/home">首页</a></li>
+					{
+						links.map((route: IRoute) => (
+							<li key={route.path}><a href={route.path}>{route.title}</a></li>
+						))
+					}
 				</ul>
 			</div>
 			<Switch>
