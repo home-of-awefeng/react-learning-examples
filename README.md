@@ -1,12 +1,37 @@
 # react-learning-examples
 
-## Available Scr~~~~ipts
+## Getting Started
 
-### `npm start`
+### install
+```
+npm i
+```
+if install failed, try run:
+```
+npm cache clean --force
+```
 
-### `npm test`
+### run
+```
+npm start
+```
 
-### `npm run build`
+### test
+```
+npm test
+```
 
-### `npm run eject`
+### build
+```
+npm run build
+```
+
+### eject
+```
+npm run eject
+```
+
+## Reference
+1. [create-react-app add typescript](https://create-react-app.dev/docs/adding-typescript)
+2. [typescript handbook/react](https://www.typescriptlang.org/docs/handbook/react.html)
 
