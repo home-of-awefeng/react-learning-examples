@@ -1,6 +1,7 @@
 import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import RenderPropsPage from "../pages/render-props";
+import ContextPage from "../pages/context";
 
 export interface IRoute {
 	path: string;
@@ -17,6 +18,11 @@ export const routes: Array<IRoute> = [
 	{
 		path: '/home',
 		title: 'Home'
+	},
+	{
+		path: '/context',
+		title: 'Context',
+		component: <ContextPage />
 	},
 	{
 		path: '/render-props',
