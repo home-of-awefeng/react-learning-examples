@@ -27,7 +27,7 @@ export default function ContextPage () {
 	return (
 		<div>
 			<MyClass/>
-			<p><a href="https://github.com/facebook/react/issues/15156#issuecomment-474590693">useContext memoization optimization</a></p>
+			<p><a href="https://github.com/facebook/react/issues/15156#issuecomment-474590693" target="_blank">useContext memoization optimization</a></p>
 		</div>
 	)
 }

@@ -41,6 +41,7 @@ export default function UseMemoPage () {
 
 	return (
 		<>
+			<h4><a href="https://juejin.cn/post/6844903954539626510#heading-3" target="_blank">Read More</a></h4>
 			<button
 				onClick={(_) => {
 					setCount(count + 1);

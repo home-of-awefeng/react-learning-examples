@@ -11,7 +11,7 @@ export default function RenderPropsPage () {
 	}
 	return (
 		<div>
-			<a href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce">Read More</a>
+			<a href="https://cdb.reacttraining.com/use-a-render-prop-50de598f11ce" target="_blank">Read More</a>
 			{/* method one */}
 			<Mouse render={renderTheCat} />
 
