@@ -4,21 +4,20 @@ const MyContext = React.createContext(111);
 
 class MyClass extends React.Component {
 	componentDidMount() {
-		let value = this.context;
+		console.log('componentDidMount', this.context);
 		/* 在组件挂载完成后，使用 MyContext 组件的值来执行一些有副作用的操作 */
 	}
 	componentDidUpdate() {
-		let value = this.context;
+		console.log('componentDidUpdate', this.context);
 		/* ... */
 	}
 	componentWillUnmount() {
-		let value = this.context;
+		console.log('componentWillUnmount', this.context);
 		/* ... */
 	}
 	render() {
-		let value = this.context;
 		/* 基于 MyContext 组件的值进行渲染 */
-		return <h6>{ value }</h6>
+		return <h6>{ this.context }</h6>
 	}
 }
 
@@ -28,6 +27,7 @@ export default function ContextPage () {
 	return (
 		<div>
 			<MyClass/>
+			<p><a href="https://github.com/facebook/react/issues/15156#issuecomment-474590693">useContext memoization optimization</a></p>
 		</div>
 	)
 }

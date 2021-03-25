@@ -2,6 +2,7 @@ import React from "react";
 import { Redirect, Route } from "react-router-dom";
 import RenderPropsPage from "../pages/render-props";
 import ContextPage from "../pages/context";
+import UseMemoPage from "../pages/hook-use-memo";
 
 export interface IRoute {
 	path: string;
@@ -28,6 +29,11 @@ export const routes: Array<IRoute> = [
 		path: '/render-props',
 		title: 'Render Props',
 		component: <RenderPropsPage />
+	},
+	{
+		path: '/use-memo',
+		title: 'UseMemo',
+		component: <UseMemoPage />
 	}
 ];
 
