@@ -11,25 +11,6 @@ if install failed, try run:
 npm cache clean --force
 ```
 
-### run
-```
-npm start
-```
-
-### test
-```
-npm test
-```
-
-### build
-```
-npm run build
-```
-
-### eject
-```
-npm run eject
-```
 
 ## Reference
 1. [create-react-app add typescript](https://create-react-app.dev/docs/adding-typescript)
